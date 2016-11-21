@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LibraryManagement.MasterPages.Site" %>
+<%@ Register TagPrefix="custom" TagName="Header" Src="~/UserControls/Header.ascx" %>
+<%@ Register TagPrefix="custom" TagName="Footer" Src="~/UserControls/Footer.ascx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <div class="row">
+            <custom:Header ID="ApplicationHeader" runat="server" />
+        </div>
+        <div class="row body-wrapper">
+            <asp:ContentPlaceHolder ID="BodyPlaceHolder" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="row">
+            <custom:Footer ID="ApplicationFooter" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

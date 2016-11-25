@@ -95,6 +95,7 @@
     <Compile Include="Account\Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\DbManager.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

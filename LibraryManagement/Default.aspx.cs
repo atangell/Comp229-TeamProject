@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LibraryManagement.Classes;
 
 namespace LibraryManagement
 {
@@ -11,16 +12,16 @@ namespace LibraryManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                DbManager dbManager = new DbManager();
+                int itemCount = dbManager.GetCollectionCount();
+                lblCollCountValue.Text = Convert.ToString(itemCount);
+                //var itemLoanedCount = dbManager.GetLoanedItemCount();
+                //lblCurrentlyLoanedValue.Text = Convert.ToString(itemLoanedCount);
+                //var itemRecentlyAdded = dbManager.GetRecentAddition();
+                //lblRecentAddValue.Text = Convert.ToString(itemRecentlyAdded.Name);
+            }
         }
-
-       //protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-       // {
-         //   Response.Redirect("http://www.torontopubliclibrary.ca/");
-       // }
-       // protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
-       // {
-       //     Response.Redirect("http://www.atozmp3.in");
-     //   }  
     }
-   }
+}

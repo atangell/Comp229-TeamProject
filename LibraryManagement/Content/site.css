@@ -82,6 +82,7 @@ img.Landingbanner{
    height: 350px;
    border: 1px solid red;
    margin-bottom: 40px;
+    margin-left: 0px;
 }
 
 .row-body {

@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,15 @@
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Signup.aspx" />
+    <Content Include="Assets\downloaded.jpg" />
+    <Content Include="Assets\musicImg.jpg" />
+    <Content Include="Assets\wallpaper1.jpg" />
+    <Content Include="Assets\wallpaper2.jpg" />
+    <Content Include="Assets\wallpaper3.jpg" />
+    <Content Include="Assets\wallpaper4.jpg" />
+    <Content Include="Assets\wallpaper5.jpg" />
+    <Content Include="Assets\wallpaper6.jpg" />
+    <Content Include="Assets\wallpaper7.jpg" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\site.css" />
     <Content Include="Default.aspx" />
@@ -136,7 +146,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Script\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

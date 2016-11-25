@@ -13,5 +13,14 @@ namespace LibraryManagement
         {
 
         }
+
+       //protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+       // {
+         //   Response.Redirect("http://www.torontopubliclibrary.ca/");
+       // }
+       // protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+       // {
+       //     Response.Redirect("http://www.atozmp3.in");
+     //   }  
     }
-}
+   }

@@ -72,6 +72,9 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Script\bootstrap.min.js" />
+    <Content Include="Script\jquery-3.1.1.min.js" />
+    <Content Include="Script\libManagement.js" />
     <Content Include="Tracker.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
@@ -149,7 +152,6 @@
   <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="fonts\" />
-    <Folder Include="Script\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

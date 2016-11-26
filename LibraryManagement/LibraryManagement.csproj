@@ -70,6 +70,7 @@
     <Content Include="Assets\wallpaper6.jpg" />
     <Content Include="Assets\wallpaper7.jpg" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

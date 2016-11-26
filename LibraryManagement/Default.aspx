@@ -49,7 +49,7 @@
 
                 <div>
                     <asp:Label ID="lblRecentAdd" class="lblCollSummary" runat="server" Text="Recent Additions: "></asp:Label>
-                    <asp:Label ID="lblRecentAddValue" runat="server" Text=" - "></asp:Label>
+                    <asp:Label ID="lblRecentAddValue" runat="server" Text=" 2 "></asp:Label>
                 </div>
 
                 <div>

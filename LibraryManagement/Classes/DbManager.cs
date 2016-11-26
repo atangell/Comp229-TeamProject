@@ -59,7 +59,7 @@ namespace LibraryManagement.Classes
             {
                 con.Open();
                 count = (int)cmd.ExecuteScalar();
-
+               
             }
             return count;
         }
@@ -85,7 +85,7 @@ namespace LibraryManagement.Classes
         //        var reader = cmd.ExecuteReader();
         //        while (reader.Read())
         //        {
-
+                    
         //            item.ItemId = Convert.ToInt32(reader["ItemId"]);
         //            item.ItemType = Convert.ToString(reader["ItemType"]);
         //            item.Name = Convert.ToString(reader["Name"]);

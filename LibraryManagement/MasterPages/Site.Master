@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LibraryManagement.MasterPages.Site" %>
+
 <%@ Register TagPrefix="custom" TagName="Header" Src="~/UserControls/Header.ascx" %>
 <%@ Register TagPrefix="custom" TagName="Footer" Src="~/UserControls/Footer.ascx" %>
 
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

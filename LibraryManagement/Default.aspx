@@ -3,22 +3,17 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="BodyPlaceHolder">
     <div class="row-body">
         <div class="container">
-           <%--   <div>
+            <%-- <div>
                 <h2>Books</h2>
-                <%--Landing Page Banner Image--
-                <img  /><asp:ImageButton ID="ImageButton1" runat="server" class="Landingbanner" src="Assets/books.jpg" Width="1000" Height="400" OnClick="ImageButton1_Click"/>
+                <%--Landing Page Banner Image
+                <img class="Landingbanner" src="/Assets/wallpaper7.jpg" />
             </div>
             <div>
                 <h2>Music</h2>
-                <%--Landing Page Banner Image--
-                <asp:ImageButton ID="ImageButton2" runat="server" class="Landingbanner" src="Assets/music.jpg" Width="1000" Height="400" OnClick="ImageButton2_Click"  />
-            </div>
-        </div>
-    </div>
-</asp:Content> --%>
-
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <%--Landing Page Banner Image
+                <img class="Landingbanner" src="/Assets/musicImg.jpg" />
+            </div>--%>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

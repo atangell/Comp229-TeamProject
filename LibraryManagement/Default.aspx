@@ -50,7 +50,8 @@
                     </div>
                 </div>
                 
-                   <div>
+            </div>
+                                <div>
                 <div class="overlay-div">
                     <div class="blank-div">
                         <div class="popup-div">
@@ -71,7 +72,7 @@
                                                 <asp:ListItem>Other</asp:ListItem>
                                           </asp:DropDownList></span>
                                 </div>
-                                 <div>
+                                <div>
                                     <span class="lblForm" id="lblName">Name:</span>
                                     <span>
                                         <asp:TextBox ID="txtName"  class="formInput " runat="server" required="required" CausesValidation="True"></asp:TextBox></span>
@@ -111,4 +112,26 @@
                                                 <asp:ListItem Value="false">No</asp:ListItem>
                                           </asp:DropDownList></span>
                                 </div>
-                                </asp:Content>
+                                
+                                <div>
+                                    <span class="lblForm" id="lblReview">Review Score:</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtReview" CausesValidation="True" TextMode="Number"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblLink">Link:</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtLink"></asp:TextBox></span>
+                                </div>
+                                <div class="btnControls">
+                                    <div ><asp:Button runat="server" class="btnAddItem btnGroup" ID="btnAddItem" Text="Add" OnClick="btnAddItem_Click"/></div>
+                                    <div><asp:Button runat="server"  class="btnCancel btnGroup" Text="Cancel" ID="btnCancel" /></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</asp:Content>

@@ -89,27 +89,49 @@ namespace LibraryManagement.Classes
             using (con)
             {
                 con.Open();
+                id = cmd.ExecuteNonQuery();
 
-        //    }
-        //    return count;
-        //}
-        //public Item GetRecentAddition()
-        //{
-        //    SqlCommand cmd = new SqlCommand("SELECT top 1 ItemId,ItemType,Name FROM Items order by DateItemAdded desc", con);
-        //    Item item = new Item();
-        //    using (con)
-        //    {
-        //        con.Open();
-        //        var reader = cmd.ExecuteReader();
-        //        while (reader.Read())
-        //        {
+            }
+            return id;
 
-        //            item.ItemId = Convert.ToInt32(reader["ItemId"]);
-        //            item.ItemType = Convert.ToString(reader["ItemType"]);
-        //            item.Name = Convert.ToString(reader["Name"]);
-        //        }
-        //    }
-        //    return item;
-        //}
+        }
+
+
+        // Get count of loaned items
+        public int GetLoanedItemCount(string conString)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Items where ItemStatus='Loaned'", con);
+            var count = 0;
+            using (con)
+            {
+                con.Open();
+                count = (int)cmd.ExecuteScalar();
+
+            }
+
+            return count;
+        }
+
+        //Get items which are recently added. Top 1
+        public Item GetRecentAddition(string conString)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand cmd = new SqlCommand("SELECT top 1 ItemId,ItemType,Name FROM Items order by DateItemAdded desc", con);
+            Item item = new Item();
+            using (con)
+            {
+                con.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    item.ItemId = Convert.ToInt32(reader["ItemId"]);
+                    item.ItemType = Convert.ToString(reader["ItemType"]);
+                    item.Name = Convert.ToString(reader["Name"]);
+                }
+            }
+            return item;
+        }
     }
 }

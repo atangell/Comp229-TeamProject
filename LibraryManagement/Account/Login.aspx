@@ -3,7 +3,6 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="BodyPlaceHolder">
     <div class="row-body">
         <div class="container">
-            
-        </div>
+           
     </div>
 </asp:Content>

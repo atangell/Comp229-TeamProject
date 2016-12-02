@@ -24,36 +24,11 @@ namespace LibraryManagement
                 DbManager dbManager = new DbManager();
                 int itemCount = dbManager.GetCollectionCount(connectionString);
                 lblCollCountValue.Text = Convert.ToString(itemCount);
-                var itemLoanedCount = dbManager.GetLoanedItemCount(connectionString);
-                lblCurrentlyLoanedValue.Text = Convert.ToString(itemLoanedCount);
-                var itemRecentlyAdded = dbManager.GetRecentAddition(connectionString);
-                lblRecentAddValue.Text = Convert.ToString(itemRecentlyAdded.Name);
+                //var itemLoanedCount = dbManager.GetLoanedItemCount();
+                //lblCurrentlyLoanedValue.Text = Convert.ToString(itemLoanedCount);
+                //var itemRecentlyAdded = dbManager.GetRecentAddition();
+                //lblRecentAddValue.Text = Convert.ToString(itemRecentlyAdded.Name);
             }
         }
-        protected void btnAddItem_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                Item newItem = new Item();
-                DbManager dbManager = new DbManager();
-                newItem.Name = txtName.Text;
-                newItem.ItemType = ddlItemType.SelectedValue;
-                newItem.ShortDesc = txtShortDesc.Value;
-                newItem.AuthorName = txtAuthorName.Text;
-                newItem.IsCompleted = Convert.ToBoolean(ddlIsCompleted.SelectedValue);
-                newItem.IsbnUpc = txtIsbn.Text;
-                newItem.ItemPlatform = txtItemPlatform.Text;
-                newItem.ReviewScore = !String.IsNullOrEmpty(txtReview.Text) ? Convert.ToDouble(txtReview.Text) : 0;
-                newItem.Link = txtLink.Text;
-                newItem.PublisherName = txtPublisherName.Text;
-                newItem.ItemStatus = ddlStatus.SelectedValue;
-
-                dbManager.AddItem(newItem, connectionString);
-                //int itemCount = dbManager.GetCollectionCount();
-            }
-        }
-
-
-
     }
 }

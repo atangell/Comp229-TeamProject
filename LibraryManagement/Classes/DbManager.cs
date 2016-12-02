@@ -90,9 +90,26 @@ namespace LibraryManagement.Classes
             {
                 con.Open();
 
-                id = cmd.ExecuteNonQuery();
+        //    }
+        //    return count;
+        //}
+        //public Item GetRecentAddition()
+        //{
+        //    SqlCommand cmd = new SqlCommand("SELECT top 1 ItemId,ItemType,Name FROM Items order by DateItemAdded desc", con);
+        //    Item item = new Item();
+        //    using (con)
+        //    {
+        //        con.Open();
+        //        var reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
 
-            }
-            return id;
-
-        }
+        //            item.ItemId = Convert.ToInt32(reader["ItemId"]);
+        //            item.ItemType = Convert.ToString(reader["ItemType"]);
+        //            item.Name = Convert.ToString(reader["Name"]);
+        //        }
+        //    }
+        //    return item;
+        //}
+    }
+}

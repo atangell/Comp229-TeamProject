@@ -7,5 +7,21 @@ namespace LibraryManagement.Classes
 {
     public class Constants
     {
+        static string _userExistDetail;
+
+
+        /// Get or set the static important data.
+
+        public static string userExistDetail
+        {
+            get
+            {
+                return _userExistDetail;
+            }
+            set
+            {
+                _userExistDetail = value;
+            }
+        }
     }
 }

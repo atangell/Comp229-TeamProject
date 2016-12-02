@@ -2,7 +2,7 @@
 <div class="row">
     <div class="banner">
         <div class="banner-left">
-            <a href="/"><span>Library Management</span></a>
+            <a href="/"><span>BGM Library Application</span></a>
         </div>
         <div class="banner-right">
             <a href="/account/login.aspx"><span>Login</span></a>

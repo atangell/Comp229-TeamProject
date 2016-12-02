@@ -49,7 +49,10 @@
                         <asp:Label ID="lblCurrentlyLoanedValue" runat="server" Text=" - "></asp:Label>
                     </div>
                 </div>
-                
+                <div class="collControls">
+                    <%--<button type="button" id="btnAddItem">Add Items to Collection</button>--%>
+                    <asp:Button ID="btnOpenPopup" Visible="false" runat="server" class="btnGroup" Text="Add Items to Collection" OnClientClick="return openPopup()" />
+                </div>
             </div>
                                 <div>
                 <div class="overlay-div">
@@ -134,4 +137,5 @@
             </div>
         </div>
     </div>
+</textarea></span>
 </asp:Content>

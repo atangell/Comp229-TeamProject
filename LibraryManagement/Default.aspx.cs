@@ -18,6 +18,11 @@ namespace LibraryManagement
         public string isLogout { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            isLogout = Request.QueryString["l"];
+            if (isLogout != null)
+                Session["IsUserId"] = isLogout == "1" ? "false" : "";
+            isUserId = Convert.ToString(Session["IsUserId"]);
+            btnOpenPopup.Visible = isUserId == "true" ? true : false;
             connectionString = ConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             if (!IsPostBack)
             {
@@ -30,6 +35,7 @@ namespace LibraryManagement
                 lblRecentAddValue.Text = Convert.ToString(itemRecentlyAdded.Name);
             }
         }
+
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -40,6 +46,20 @@ namespace LibraryManagement
                 newItem.ItemType = ddlItemType.SelectedValue;
                 newItem.ShortDesc = txtShortDesc.Value;
                 newItem.AuthorName = txtAuthorName.Text;
+                newItem.IsCompleted = Convert.ToBoolean(ddlIsCompleted.SelectedValue);
+                newItem.IsbnUpc = txtIsbn.Text;
+                newItem.ItemPlatform = txtItemPlatform.Text;
+                newItem.ReviewScore = !String.IsNullOrEmpty(txtReview.Text) ? Convert.ToDouble(txtReview.Text) : 0;
+                newItem.Link = txtLink.Text;
+                newItem.PublisherName = txtPublisherName.Text;
+                newItem.ItemStatus = ddlStatus.SelectedValue;
+
+                dbManager.AddItem(newItem, connectionString);
+                //int itemCount = dbManager.GetCollectionCount();
             }
-        
+        }
+
+
+
+    }
 }

@@ -50,6 +50,7 @@
                     </div>
                 </div>
                 
+                   <div>
                 <div class="overlay-div">
                     <div class="blank-div">
                         <div class="popup-div">
@@ -68,6 +69,46 @@
                                                 <asp:ListItem>Book</asp:ListItem>
                                                 <asp:ListItem>Music</asp:ListItem>
                                                 <asp:ListItem>Other</asp:ListItem>
+                                          </asp:DropDownList></span>
+                                </div>
+                                 <div>
+                                    <span class="lblForm" id="lblName">Name:</span>
+                                    <span>
+                                        <asp:TextBox ID="txtName"  class="formInput " runat="server" required="required" CausesValidation="True"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblShortDesc">Short Description:</span>
+                                    <span><textarea runat="server" class="formInput " name="txtShortDesc" id="txtShortDesc" /></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblAuthorName">Author Name:</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtAuthorName" required="required"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblPublisherName">Publisher Name</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtPublisherName" required="required" CausesValidation="True"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblIsbn">Isbn/UPC:</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtIsbn"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblItemPlatform">Item Platform:</span>
+                                    <span><asp:TextBox class="formInput" runat="server" ID="txtItemPlatform"></asp:TextBox></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblStatus">Status:</span>
+                                    <span><asp:DropDownList ID="ddlStatus" class="formInput " runat="server">
+                                                <asp:ListItem>Owned</asp:ListItem>
+                                                <asp:ListItem>Loaned</asp:ListItem>
+                                                <asp:ListItem>Wanted</asp:ListItem>
+                                          </asp:DropDownList></span>
+                                </div>
+                                <div>
+                                    <span class="lblForm" id="lblCompleted">Is Completed:</span>
+                                    <span><asp:DropDownList ID="ddlIsCompleted" class="formInput " runat="server">
+                                                <asp:ListItem Value="true">Yes</asp:ListItem>
+                                                <asp:ListItem Value="false">No</asp:ListItem>
                                           </asp:DropDownList></span>
                                 </div>
                                 </asp:Content>

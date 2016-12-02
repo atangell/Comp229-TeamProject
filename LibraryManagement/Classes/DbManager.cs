@@ -63,14 +63,32 @@ namespace LibraryManagement.Classes
             }
             return count;
         }
-        //public int GetLoanedItemCount()
-        //{
-        //    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Items where ItemStatus='Loaned'", con);
-        //    var count = 0;
-        //    using (con)
-        //    {
-        //        con.Open();
-        //        count = (int)cmd.ExecuteScalar();
+        // Add Item to Collection
+        public int AddItem(Item item, string conString)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            int id = 0;
+            SqlCommand cmd =
+                new SqlCommand(
+                    "Insert into Items(ItemType,Name,ShortDesc,AuthorName,PublisherName,IsCompleted,ItemStatus,Link,IsbnUpc,ItemPlatform,ReviewScore) values(@ItemType,@Name,@ShortDesc,@AuthorName,@PublisherName,@IsCompleted,@ItemStatus,@Link,@IsbnUpc,@ItemPlatform,@ReviewScore)",
+                    con);
+            cmd.Parameters.AddWithValue("@ItemType", item.ItemType);
+            cmd.Parameters.AddWithValue("@Name", item.Name);
+            cmd.Parameters.AddWithValue("@ShortDesc", item.ShortDesc);
+            cmd.Parameters.AddWithValue("@AuthorName", item.AuthorName);
+            cmd.Parameters.AddWithValue("@PublisherName", item.PublisherName);
+            cmd.Parameters.AddWithValue("@IsCompleted", item.IsCompleted);
+            cmd.Parameters.AddWithValue("@ItemStatus", item.ItemStatus);
+            cmd.Parameters.AddWithValue("@Link", item.Link);
+            cmd.Parameters.AddWithValue("@IsbnUpc", item.IsbnUpc);
+            cmd.Parameters.AddWithValue("@ItemPlatform", item.ItemPlatform);
+            cmd.Parameters.AddWithValue("@ReviewScore", item.ReviewScore);
+
+
+
+            using (con)
+            {
+                con.Open();
 
         //    }
         //    return count;
@@ -85,7 +103,7 @@ namespace LibraryManagement.Classes
         //        var reader = cmd.ExecuteReader();
         //        while (reader.Read())
         //        {
-                    
+
         //            item.ItemId = Convert.ToInt32(reader["ItemId"]);
         //            item.ItemType = Convert.ToString(reader["ItemType"]);
         //            item.Name = Convert.ToString(reader["Name"]);

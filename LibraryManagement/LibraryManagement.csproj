@@ -90,7 +90,9 @@
     <Content Include="Tracker.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\Login.aspx.cs">

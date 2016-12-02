@@ -160,6 +160,54 @@ namespace LibraryManagement.Classes
             }
             return id;
         }
+        // Delete item from collection
+        public int DeleteItem(int itemId)
+        {
+            int id = 0;
+            SqlCommand cmd = new SqlCommand("Delete from Items where ItemId=@ItemId", con);
+            cmd.Parameters.AddWithValue("@ItemId", itemId);
+            using (con)
+            {
+                con.Open();
+                id = cmd.ExecuteNonQuery();
+            }
+            return id;
+        }
+
+
+        //Get detail of item
+        public Item GetItemDetail(int id)
+        {
+
+            SqlCommand cmd = new SqlCommand("Select * from Items where ItemId='" + id + "'", con);
+            Item item = new Item();
+            using (con)
+            {
+
+                con.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    item.ItemId = Convert.ToInt32(reader["ItemId"]);
+                    item.ItemType = Convert.ToString(reader["ItemType"]);
+                    item.Name = Convert.ToString(reader["Name"]);
+                    item.ShortDesc = Convert.ToString(reader["ShortDesc"]);
+                    item.AuthorName = Convert.ToString(reader["AuthorName"]);
+                    item.PublisherName = Convert.ToString(reader["PublisherName"]);
+                    item.IsCompleted = Convert.ToBoolean(reader["IsCompleted"]);
+                    item.ItemStatus = Convert.ToString(reader["ItemStatus"]);
+                    item.Link = Convert.ToString(reader["Link"]);
+                    item.ReviewScore = !Convert.IsDBNull(reader["ReviewScore"]) ? Convert.ToDouble(reader["ReviewScore"]) : 0;
+                    item.DateItemAdded = Convert.ToDateTime(reader["DateItemAdded"]);
+                    item.IsbnUpc = Convert.ToString(reader["IsbnUpc"]);
+                    item.ItemPlatform = Convert.ToString(reader["ItemPlatform"]);
+
+                }
+            }
+            return item;
+        }
+
 
     }
 }

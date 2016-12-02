@@ -133,5 +133,33 @@ namespace LibraryManagement.Classes
             }
             return item;
         }
+        // Update item in collection
+        public int UpdateItem(Item item, int itemId)
+        {
+            int id = 0;
+            SqlCommand cmd =
+                new SqlCommand(
+                    "Update Items set ItemType=@ItemType, Name=@Name, ShortDesc=@ShortDesc, AuthorName=@AuthorName, PublisherName=@PublisherName, IsCompleted=@IsCompleted, ItemStatus=@ItemStatus, Link=@Link, ReviewScore=@ReviewScore, IsbnUpc=@IsbnUpc, ItemPlatform=@ItemPlatform where ItemId=@ItemId",
+                    con);
+            cmd.Parameters.AddWithValue("@ItemType", item.ItemType);
+            cmd.Parameters.AddWithValue("@Name", item.Name);
+            cmd.Parameters.AddWithValue("@ShortDesc", item.ShortDesc);
+            cmd.Parameters.AddWithValue("@AuthorName", item.AuthorName);
+            cmd.Parameters.AddWithValue("@PublisherName", item.PublisherName);
+            cmd.Parameters.AddWithValue("@IsCompleted", item.IsCompleted);
+            cmd.Parameters.AddWithValue("@ItemStatus", item.ItemStatus);
+            cmd.Parameters.AddWithValue("@Link", item.Link);
+            cmd.Parameters.AddWithValue("@ReviewScore", item.ReviewScore);
+            cmd.Parameters.AddWithValue("@IsbnUpc", item.IsbnUpc);
+            cmd.Parameters.AddWithValue("@ItemPlatform", item.ItemPlatform);
+            cmd.Parameters.AddWithValue("@ItemId", itemId);
+            using (con)
+            {
+                con.Open();
+                id = cmd.ExecuteNonQuery();
+            }
+            return id;
+        }
+
     }
 }

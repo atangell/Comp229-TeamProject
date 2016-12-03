@@ -14,9 +14,21 @@
     <script src="../Script/bootstrap.min.js"></script>
     <script src="../Script/libManagement.js"></script>
     <link href="../Content/site.css" rel="stylesheet" />
+    <script>
+        openPopup= function () {
+
+            $(".overlay-div").show("slow");
+            return false;
+        }
+        closePopup=function(){
+            $(".overlay-div").hide("slow");
+        }
+
+    </script>
 </head>
 <body>
     <form id="MainForm" runat="server">
+        <asp:Label runat="server" class="hide isUserExists" ID="lblUserExists" />
         <div class="wrapper">
             <div>
                 <custom:Header ID="ApplicationHeader" runat="server" />
@@ -29,10 +41,7 @@
                 <custom:Footer ID="ApplicationFooter" runat="server" />
             </div>
         </div>
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+
     </form>
 </body>
-
-
 </html>

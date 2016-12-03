@@ -32,11 +32,11 @@ namespace LibraryManagement
             Item item = new Item();
             if (e.CommandName == "Edit")
             {
-
+                
                 int id = Convert.ToInt32(e.CommandArgument);
                 item = dbManager.GetItemDetail(id);
                 item.ItemId = isUserId == "true" ? item.ItemId : 0;
-
+                
                 currentItemId.Text = Convert.ToString(item.ItemId);
                 txtName.Text = item.Name;
                 ddlItemType.SelectedValue = item.ItemType;
@@ -80,9 +80,9 @@ namespace LibraryManagement
 
         protected void rptItemList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (isUserId == "true")
-                ((LinkButton)(e.Item.FindControl("editLink"))).Visible = true;
-
+            if(isUserId=="true")
+            ((LinkButton)(e.Item.FindControl("editLink"))).Visible = true;
+            
         }
 
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Title="Login" AutoEventWireup="true" MasterPageFile="~/masterpages/site.master" CodeBehind="Login.aspx.cs" Inherits="LibraryManagement.Account.Login" %>
+﻿<%@ Page Language="C#" Title="Login" AutoEventWireup="true" EnableSessionState="True" MasterPageFile="~/masterpages/site.master" CodeBehind="Login.aspx.cs" Inherits="LibraryManagement.Account.Login" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="BodyPlaceHolder">
     <div class="row-body">
@@ -11,5 +11,6 @@
                 <asp:Button runat="server" class="btnGroup" ID="btnLogin" Text="Login"  OnClick="btnLogin_Click" />
             </div>
         </div>
+
     </div>
 </asp:Content>

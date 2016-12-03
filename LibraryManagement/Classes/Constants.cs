@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LibraryManagement.Classes
 {
-    public class Constants
+    public static class Constants
     {
         static string _userExistDetail;
 
@@ -23,5 +23,6 @@ namespace LibraryManagement.Classes
                 _userExistDetail = value;
             }
         }
+
     }
 }

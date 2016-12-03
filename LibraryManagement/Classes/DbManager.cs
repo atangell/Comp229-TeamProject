@@ -229,13 +229,19 @@ namespace LibraryManagement.Classes
             cmd.Parameters.AddWithValue("@Username", memberDetail.UserName);
             cmd.Parameters.AddWithValue("@Pwd", memberDetail.Password);
             cmd.Parameters.AddWithValue("@EmailId", memberDetail.Email);
-
-            using (con)
+            try
             {
-                con.Open();
+                using (con)
+                {
+                    con.Open();
 
-                id = cmd.ExecuteNonQuery();
+                    id = cmd.ExecuteNonQuery();
 
+                }
+            }
+            catch(Exception e)
+            {
+                throw;
             }
             return id;
         }
@@ -244,19 +250,26 @@ namespace LibraryManagement.Classes
         public Member IsMember(string username, string password)
         {
             Member member = new Member();
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Members where UserName='" + username + "' and Pwd='" + password + "'", con);
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Members where UserName='" + username + "' and Pwd='"+password+"'", con);
             var count = 0;
-            using (con)
+            try
             {
-                con.Open();
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (con)
                 {
+                    con.Open();
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
 
-                    member.UserName = Convert.ToString(reader["UserName"]);
-                    member.Email = Convert.ToString(reader["EmailId"]);
+                        member.UserName = Convert.ToString(reader["UserName"]);
+                        member.Email = Convert.ToString(reader["EmailId"]);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                
             }
             return member;
         }

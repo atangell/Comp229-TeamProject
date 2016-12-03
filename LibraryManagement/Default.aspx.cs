@@ -19,8 +19,8 @@ namespace LibraryManagement
         protected void Page_Load(object sender, EventArgs e)
         {
             isLogout = Request.QueryString["l"];
-            if (isLogout != null)
-                Session["IsUserId"] = isLogout == "1" ? "false" : "";
+            if(isLogout!=null)
+            Session["IsUserId"] = isLogout=="1"?"false":"";
             isUserId = Convert.ToString(Session["IsUserId"]);
             btnOpenPopup.Visible = isUserId == "true" ? true : false;
             connectionString = ConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
@@ -59,7 +59,7 @@ namespace LibraryManagement
             }
         }
 
-
+        
 
     }
 }

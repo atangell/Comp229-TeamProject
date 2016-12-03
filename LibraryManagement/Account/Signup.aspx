@@ -5,6 +5,7 @@
         <div class="container">
           <div class="container">
             <div class="loginBlock">
+                <asp:Label runat="server" Visible="false" ID="lblErrorMsg" class="error"/>
                 <asp:TextBox runat="server" required ID="txtEmail" TextMode="Email" placeholder="Email id" class="required txtControl" CausesValidation="True"  />
                 <asp:TextBox runat="server" required ID="txtUsername" class="required txtControl" placeholder="Username" CausesValidation="True" />
                 <asp:TextBox runat="server" required ID="txtPassword" TextMode="Password" placeholder="Password" CausesValidation="True" class="required txtControl"/>

@@ -1,5 +1,5 @@
 ﻿var libManagement = {
-    closePopup: function () {
+    closePopup:function(){
         $(".overlay-div").hide("slow");
     },
     openPopup: function () {
@@ -8,7 +8,7 @@
     },
 
     init: function () {
-        var isUserExists = $('.isUserExists').text();
+        var isUserExists= $('.isUserExists').text();
         var windowHeight = $(window).height();
         var wrapperHeight = $('.wrapper').height();
         if (windowHeight > wrapperHeight)

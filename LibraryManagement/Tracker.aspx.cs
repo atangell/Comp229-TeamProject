@@ -14,10 +14,18 @@ namespace LibraryManagement
         {
             if(!IsPostBack)
             {
+                //DbManager dbManager = new DbManager();
+                //List<Item> items = dbManager.GetItems();
+                //lblName.Text = items[0].Name;
+                //lblDesc.Text = items[0].ShortDesc;
+
+                isUserId = Convert.ToString(Session["IsUserId"]);
+                connectionString = ConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
                 DbManager dbManager = new DbManager();
-                List<Item> items = dbManager.GetItems();
-                lblName.Text = items[0].Name;
-                lblDesc.Text = items[0].ShortDesc;
+                List<Item> items = dbManager.GetItems(connectionString);
+                rptItemList.DataSource = items;
+                rptItemList.DataBind();
+
             }
 
         }

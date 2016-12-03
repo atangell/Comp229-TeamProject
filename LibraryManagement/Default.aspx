@@ -72,7 +72,7 @@
                                     <span><asp:DropDownList ID="ddlItemType" class="formInput txtName"  runat="server" CausesValidation="True">
                                                 <asp:ListItem>Book</asp:ListItem>
                                                 <asp:ListItem>Music</asp:ListItem>
-                                                <asp:ListItem>Other</asp:ListItem>
+                                                <asp:ListItem>Games</asp:ListItem>
                                           </asp:DropDownList></span>
                                 </div>
                                 <div>
